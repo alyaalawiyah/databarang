@@ -30,7 +30,14 @@
 
             <div class="mb-3">
                 <label for="kategori_id" class="form-label">Kategori</label>
-                <input type="text" name="kategori_id" class="form-control" required>
+                <select name="kategori_id" class="form-control" required>
+                    <option value="">-- Pilih Kategori --</option>
+                    @foreach ($kategoris as $k)
+                        <option value="{{ $k->id }}">
+                            {{ $k->nama_kategori }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="d-flex justify-content-between">
